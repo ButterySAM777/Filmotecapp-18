@@ -27,16 +27,6 @@ angular.module('starter', ['ionic'])
             item.star = !item.star;
         }
 
-        // Función que se encarga de re-cargar de nuevo la entrada de nuestro JSON
-        // cuando el evento on-refresh es lanzado, en el código HTML. 
-        $scope.doRefresh = function() {
-          $http.get('js/data.json').success(function(data){
-            $scope.peliculas = data;
-            $scope.$broadcast('scroll.refreshComplete');
-          });
-        }
-
-
         $scope.onItemDelete = function(item) {
           $scope.peliculas.splice($scope.peliculas.indexOf(item), 1);
         };
